@@ -14,10 +14,11 @@ export default function Home() {
       <header className={pacif.className}>
         Meat Metronome
       </header>
-      <div className={`border border-white rounded-2xl flex flex-col w-1/2 h-3/4 ${qs.className} justify-center m-auto my-10 text-3xl p-10`}>
+      <div className={`bg-red-300 border-4 border-white rounded-2xl flex flex-col w-1/2 h-3/4 ${qs.className} justify-center m-auto my-10 text-3xl p-10`}>
         Welcome to Meat Metronome. The tool to help you keep the beats of your meeting
-        <div className="flex flex-row items-center justify-center m-10">
+        <div className="flex flex-row items-center justify-center m-10 justify-evenly">
           <Button text="Sign Up" onClick={handleClick}></Button>
+          <Button text="Log In" onClick={handleClick}></Button>
         </div>
       </div>
     </div>
