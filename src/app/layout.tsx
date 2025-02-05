@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Pacifico, Quicksand  } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const pacif = Pacifico({weight: "400", subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "Meat Metronome",
@@ -25,10 +27,16 @@ export default function RootLayout({
 }>) {
   return (
     <html className=" " lang="en ">
-      <body
-        className={`h-screen w-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`h-screen w-screen h-full w-full flex flex-col ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <header className={pacif.className}>
+        Meat Metronome
+      </header>
         {children}
+        <footer>
+          <div className="flex justify-center items-center h-16 bg-red-900 text-white">
+            <p>© 2025 Meat Metronome</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
