@@ -1,4 +1,3 @@
-'use client'
 import { Pacifico, Quicksand } from "next/font/google";
 import Button from "./Button";
 import { get } from "http";
@@ -25,8 +24,7 @@ export default function Home() {
           <p>Welcome to Meat Metronome. The tool to help you keep the <span className="text-red-600 pun">beats</span> of your "<span className="text-red-600 pun">meating</span>".</p>
         </div>
         <div className="flex flex-row py-4 items-center justify-center justify-evenly text-3xl">
-          <Button text="Sign Up" onClick={() => handleClick(setResponse)}></Button>
-          <Button text="Log In" onClick={() => handleClick(setResponse)}></Button>
+          <Button text="Generate Room" onClick={() => handleClick(setResponse)}></Button>
           <p>{response}</p>
         </div>
       </div>
