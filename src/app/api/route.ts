@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 // In-memory storage for generated IDs
 const generatedIds = new Set<string>();
 
+
+
 function generateId() {
     let id;
     do {
@@ -24,4 +26,14 @@ export async function GET() {
   console.log(generatedIds)
   
   return NextResponse.json({ id });
+}
+
+interface Room {
+  room: string;
+  agenda: [
+    {
+      title: string;
+      time: number;
+    }
+  ];
 }

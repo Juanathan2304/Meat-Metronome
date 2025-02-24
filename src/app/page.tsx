@@ -1,3 +1,4 @@
+'use client';
 import { Pacifico, Quicksand } from "next/font/google";
 import Button from "./Button";
 import { get } from "http";
@@ -14,7 +15,7 @@ const handleClick = async (setResponse: React.Dispatch<React.SetStateAction<stri
 }
 
 const pacif = Pacifico({ weight: "400", subsets: ['latin'] });
-const qs = Quicksand({ weight: "400", style: "normal", subsets: ['latin'] });
+
 export default function Home() {
   const [response, setResponse] = useState<string>('');
   return (
@@ -23,9 +24,9 @@ export default function Home() {
       <div className="flex-grow flex flex-col justify-center text-6xl greeting text-center ">
           <p>Welcome to Meat Metronome. The tool to help you keep the <span className="text-red-600 pun">beats</span> of your "<span className="text-red-600 pun">meating</span>".</p>
         </div>
-        <div className="flex flex-row py-4 items-center justify-center justify-evenly text-3xl">
+        <div className="flex flex-row py-4 items-center justify-center text-3xl border ">
           <Button text="Generate Room" onClick={() => handleClick(setResponse)}></Button>
-          <p>{response}</p>
+          <p className="border">{response}</p>
         </div>
       </div>
     </div>
